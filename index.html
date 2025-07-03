@@ -5,16 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoplite BJJ</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <header>
-    <h1>Hoplite BJJ</h1>
-    <nav>
-        <a href="index.html">Home</a> |
-    </nav>
+    <div class="container">
+        <div class="logo">
+            <img src="assets/img/hoplite-bjj-logo.png" alt="Hoplite BJJ Logo">
+            <h1>Hoplite BJJ</h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#classes">Schedule</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 </header>
+
 <main>
-    <p>This is the page.</p>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Train like a warrior</h2>
+            <p>Join our Brazilian Jiu-Jitsu family and start your journey today.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+
+            <p>
+                At Hoplite BJJ, we believe in <strong>discipline, respect, and constant improvement.</strong>
+                Led by head coach Adam Wilson, our academy provides a welcoming, beginner-friendly environment
+                where students of all levels can develop their skills and confidence on the mats.
+            </p>
+
+            <h3>Meet <span style="color: var(--primary-light)">“Grizzly Adam”</span></h3>
+
+            <p>
+                Known as <strong>“Grizzly Adam”</strong>, Adam Wilson brings years of experience and a true passion
+                for Brazilian Jiu-Jitsu. He started his martial arts journey with Kung Fu, earning a purple sash,
+                before committing fully to BJJ — where he is now a respected black belt and accomplished competitor.
+            </p>
+
+            <p>
+                Over his competitive career, Adam has tested himself at regional tournaments across the UK
+                and internationally, including the <strong>Paris Open</strong>. His fighting style combines
+                relentless top pressure and submission hunting, with favorite techniques like mounted triangles
+                and wrist locks — which, in his words, he loves “because of how mad they make people.”
+            </p>
+
+            <blockquote style="border-left: 4px solid var(--primary-light); margin: 1rem 0; padding-left: 1rem; font-style: italic;">
+                “Because of how mad they make people.”
+            </blockquote>
+
+            <p>
+                Adam’s goal is to help each student — hobbyist or competitor — progress in a supportive, disciplined,
+                and friendly atmosphere. Whether you’re training for fitness, self-defense, or competition,
+                Hoplite BJJ offers the perfect environment to start your journey and achieve your goals.
+            </p>
+        </div>
+    </section>
+
+
+
+    <section id="coaches">
+        <div class="container">
+            <h2>Coach</h2>
+            <div class="coach">
+                <div class="coach-image">
+                    <img src="assets/img/coach-adam.jpg" alt="Adam Wilson, Head Coach">
+                </div>
+                <div class="coach-info">
+                    <h3>Adam Wilson <span>– Head Coach</span></h3>
+                    <p>
+                        Adam Wilson is the head coach at Hoplite Jiu-Jitsu in Southampton, UK.
+                        He offers a beginner-friendly, supportive environment where everyone
+                        can develop their skills and confidence on the mats.
+                    </p>
+                    <p>
+                        Adam is an experienced competitor and teacher, passionate about sharing
+                        his knowledge of Brazilian Jiu-Jitsu with students of all levels.
+                    </p>
+                    <p>
+                        <strong>Private Sessions Available:</strong><br>
+                        £40 per hour or £30 for 45 minutes.<br>
+                        DM via Instagram to arrange.
+                    </p>
+                    <p>
+                        📲 Instagram: <a href="https://instagram.com/grizzlyadambjj" target="_blank">@grizzlyadambjj</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="classes">
+        <div class="container">
+            <h2>Weekly Schedule</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Morning Time</th>
+                        <th>Morning Type</th>
+                        <th>Evening Time</th>
+                        <th>Evening Type</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>07:00–08:00</td>
+                        <td>NoGi</td>
+                        <td>19:00–20:00</td>
+                        <td>Gi</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>07:00–08:00</td>
+                        <td>Gi</td>
+                        <td>19:00–20:00</td>
+                        <td>NoGi</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>07:00–08:00</td>
+                        <td>NoGi</td>
+                        <td>18:00–19:00</td>
+                        <td>Gi</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>07:00–08:00</td>
+                        <td>Gi</td>
+                        <td>19:00–20:00</td>
+                        <td>NoGi</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>07:00–08:00</td>
+                        <td>NoGi</td>
+                        <td>19:00–20:00</td>
+                        <td>Gi</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+
+            <p>We offer simple, affordable membership options for everyone — whether you’re training for fitness, self-defense, or competition.</p>
+
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Standard Membership</h3>
+                    <p class="price">£65 / month</p>
+                    <p>Train as much as you like with our full membership. Or drop in for <strong>£10 per session</strong> if you prefer pay-as-you-go.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Couples Membership</h3>
+                    <p class="price">£100 / month</p>
+                    <p>A discounted rate for couples training together — full access for both.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Emergency Services</h3>
+                    <p class="price">£50 / month</p>
+                    <p>Available to Armed Forces, Police, NHS & other emergency services personnel — thank you for your service.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Private Classes</h3>
+                    <p class="price">£40 per hour or £30 for 45 minutes.</p>
+                    <p>Ideal for those looking for personal coaching and rapid progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact & Info</h2>
+
+            <div class="contact-info">
+                <p>Beginner-friendly Brazilian Jiu-Jitsu club in Southampton</p>
+
+                <ul>
+                    <li><strong>Head Coach:</strong> <a href="https://instagram.com/grizzlyadambjj" target="_blank">@grizzlyadambjj</a>
+                    </li>
+                    <li><strong>Affiliate of:</strong> <a href="https://instagram.com/roningrappling" target="_blank">@roningrappling</a>
+                    </li>
+                    <li><strong>Instagram:</strong> <a href="https://instagram.com/hoplitejiujitsu" target="_blank">@hoplitejiujitsu</a>
+                    </li>
+                    <li><strong>Address:</strong> Hoplite Brazilian Jiu-Jitsu, Unit 011,<br>
+                        Solent Business Centre, 343 Millbrook Rd W, Southampton, SO15 0HW
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </main>
+
+<section id="map">
+    <div class="container">
+        <h2>Find Us</h2>
+        <div class="map-embed">
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2515.5503921961445!2d-1.4413479233015858!3d50.91353485391302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487477002658fc89%3A0x119b35da32f869e2!2sHoplite%20Brazilian%20Jiu-Jitsu%20(BJJ)!5e0!3m2!1sen!2suk!4v1751535269959!5m2!1sen!2suk"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        &copy; 2025 Hoplite BJJ. All rights reserved.
+    </div>
+</footer>
+
 </body>
 </html>
