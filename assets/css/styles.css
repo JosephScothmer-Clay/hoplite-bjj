@@ -228,6 +228,16 @@ footer {
     margin: 0.5rem 0;
 }
 
+.coach-info a {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+.coach-info a:hover {
+    color: var(--text);
+    text-decoration: none;
+}
+
 .hero {
     text-align: center;
     padding: 4rem 1rem;
