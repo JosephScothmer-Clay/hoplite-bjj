@@ -122,11 +122,13 @@ section .container {
 .table-wrapper {
     width: 100%;
     overflow-x: auto;
+    border-radius: 8px;
+    -webkit-overflow-scrolling: touch;
 }
 
 .table-wrapper table {
     width: 100%;
-    min-width: 600px;
+    min-width: max-content;
     border-collapse: collapse;
     border-radius: 8px;
     overflow: hidden;
