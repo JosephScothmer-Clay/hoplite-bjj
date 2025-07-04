@@ -1,6 +1,6 @@
 :root {
-    --primary: #0d47a1;       /* dark blue */
-    --primary-light: #1565c0; /* lighter blue */
+    --primary: #1565c0;       /* dark blue */
+    --primary-light: #1e88e5; /* lighter blue */
     --background: #000000;    /* black */
     --text: #ffffff;          /* white */
     --alt-row: #2c2c2c;       /* dark grey */
@@ -17,6 +17,7 @@ body {
     color: var(--text);
     background-color: var(--background);
 }
+
 header {
     background-color: var(--background);
     padding: 1rem 0;
@@ -29,7 +30,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -37,6 +38,77 @@ header .container {
 header .logo {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+}
+
+header .nav-group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+header nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header .social-icons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.hamburger {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    display: none;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+header nav a {
+    position: relative;
+    display: inline-block;
+    color: var(--text);
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+header .social-icons a svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-light);
+    transition: fill 0.3s ease;
+}
+
+header .social-icons a:hover svg {
+    fill: var(--text);
 }
 
 header .logo img {
@@ -47,16 +119,6 @@ header .logo img {
 header h1 {
     margin: 0;
     font-size: 1.8rem;
-}
-
-header nav a {
-    position: relative;
-    display: inline-block;
-    color: var(--text);
-    text-decoration: none;
-    margin-left: 1rem;
-    padding-bottom: 2px;
-    transition: color 0.3s ease;
 }
 
 header nav a::after {
@@ -84,7 +146,8 @@ header nav a:hover::after {
 .hero {
     text-align: center;
     padding: 4rem 1rem;
-    background: #263238;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('../img/hero-background.jpg') top center / cover no-repeat;
 }
 
 .hero h2 {
@@ -150,22 +213,21 @@ section .container {
 }
 
 .table-wrapper tr {
-    background-color: #121212;
+    background-color: var(--background);
     transition: background-color 0.2s ease-in-out;
 }
 
 .table-wrapper tr:nth-child(even) {
-    background-color: #1e1e1e;
+    background-color: var(--alt-row);
 }
 
 .table-wrapper tr:hover {
-    background-color: #2a2a2a;
+    background-color: rgba(21, 101, 192, 0.2);
 }
 
 .table-wrapper td {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--alt-row);
 }
-
 
 footer {
     background-color: var(--primary);
@@ -238,13 +300,6 @@ footer {
     text-decoration: none;
 }
 
-.hero {
-    text-align: center;
-    padding: 4rem 1rem;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('../img/hero-background.jpg') top center / cover no-repeat;
-}
-
 #pricing {
     padding: 2rem 1rem;
     text-align: center;
@@ -259,7 +314,7 @@ footer {
 }
 
 .pricing-card {
-    background: #121212;
+    background-color: var(--background);
     border: 1px solid var(--primary);
     border-radius: 8px;
     padding: 1rem;
@@ -282,7 +337,7 @@ footer {
 .map-embed {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -298,31 +353,72 @@ footer {
     border: 0;
 }
 
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
 @media (max-width: 768px) {
     html {
-        scroll-padding-top: 60px; /* header is smaller on mobile */
-    }
-
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        scroll-padding-top: 60px;
     }
 
     header h1 {
         font-size: 1.4rem;
     }
 
-    header nav {
-        width: 100%;
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .logo {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: inline-block;
+        margin-left: auto;
+    }
+
+    .nav-group {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--background);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-group.open {
+        left: 0;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
     }
 
     header nav a {
-        margin-left: 0;
-        margin-right: 1rem;
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    header .social-icons {
+        margin-top: 1rem;
     }
 
     .hero {
@@ -373,21 +469,103 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.2rem;
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    .btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
-    }
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--primary-light);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border-left: 4px solid var(--primary);
 }
+
+.testimonial blockquote {
+    margin: 0;
+    color: #ddd;
+}
+
+.testimonial .quote-mark {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.testimonial figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: right;
+}
+
+
+#testimonials .btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+#testimonials .btn:hover {
+    background-color: var(--primary-light);
+}
+
+.quote-mark {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.stars {
+    color: var(--primary-light);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--alt-row);
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--primary-light);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px;
+    padding: 0.5rem 0;
+}
+
+.faq-question .chevron {
+    transition: transform 0.3s ease;
+    color: var(--primary-light);
+}
+
+.faq-item.open .chevron {
+    transform: rotate(180deg);
+}
+
+
